@@ -27,7 +27,7 @@ class Estudiante{
     return $this->$atributo;
   }
 
-  public fucntion listar(){
+  public function listar(){
     $sql="SELECT * FROM estudiantes";
     $resultado=$this->con->consultaRetorno($sql);
     return $resultado;
@@ -40,7 +40,7 @@ class Estudiante{
     $num=mysqli_num_rows($resultado);
     if($num!=0)
     {
-      return false
+      return false;
     }
     else {
       $sql="INSERT INTO estudiantes (cedula,nombre,apellido,telefono,edad,promedio,fecha) VALUES ('{$this->cedula}','{$this->$nombre}','{$thia->$apellido}','{$this->telefono}','{$this->edad}','{$this->promedio}'.NOW())";
@@ -57,7 +57,7 @@ class Estudiante{
   {
     $sql="SELECT * FROM estudiantes where id='{$this->id}' LIMIT 1";
     $resultado=$this->con->consultaRetorno($sql);
-    $row=mysqli_fetch_assoc($resultado);
+    $row=mysql_fetch_assoc($resultado);
 
     //Set
 
